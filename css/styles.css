@@ -5,14 +5,13 @@
 	-moz-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	color: #CCC;
-	overflow-x: hidden;
 	font-family: Helvetica, Georgia, sans-serif, Arial, Serif;
 }
 
 html {
 	height: 100%;
 	background: url("../img/biker-motorcycle-ride-oil-paint-black&white.jpg") no-repeat;
-	background-size: 110% 100%;
+	background-size: 115% 100%;
 }
 
 body {
@@ -23,15 +22,23 @@ body {
 }
 
 section {
-	background: rgba(0, 0, 0, 0.5);
-	margin: 50px auto;
-	width: 1200px;
+	background: rgba(0, 0, 0, 0.85);
+	/*margin: 50px auto;*/
+	/*width: 1200px;*/
+	padding: 50px 80px;
+	height: calc(100% - 100px);
 }
 
 article > h1 {
 	font-size: 2em;
 	text-align: center;
-	margin-bottom: 70px;
+}
+
+article > hr {
+	border: none;
+	border-bottom: 1px solid #777;
+	width: 350px;
+	margin: 20px auto 50px;
 }
 
 .profile-pic {
@@ -39,13 +46,17 @@ article > h1 {
 }
 
 .profile-pic img {
-	border: 8px solid white;
+	border: 8px solid #EEE;
 	border-radius: 100%;
 	width: 200px;
 	height: 200px;
 }
 
-article > p {
+article p {
 	display: inline-block;
-	width: 900px;
+	width: calc(100% - 400px);
+	padding-left: 50px;
+	/*padding-top: 50px;*/
+	vertical-align: top;
+	line-height: 1.5em;
 }
