@@ -10,35 +10,128 @@
 
 html {
 	height: 100%;
-	background: url("../img/biker-motorcycle-ride-oil-paint-black&white.jpg") no-repeat;
+	background: url("../img/biker-motorcycle-ride-oil-paint-vintage.jpg") no-repeat;
 	background-size: 115% 100%;
 }
 
 body {
-	background: radial-gradient(circle, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.9))
-		rgba(220, 160, 0, 0.15);
+	background:	rgba(0, 0, 0, 0.9);
 	height: 100%;
-	/*padding: 0 100px;*/
+	/*overflow-y: hidden;*/
 }
 
-section {
-	background: rgba(0, 0, 0, 0.85);
-	/*margin: 50px auto;*/
-	/*width: 1200px;*/
-	padding: 50px 80px;
-	height: calc(100% - 100px);
-}
-
-article > h1 {
+header > h1 {
 	font-size: 2em;
 	text-align: center;
+	padding-top: 15px;
+	transform-origin: bottom;
 }
 
-article > hr {
+body.menu-active > header > h1 {
+	transform: rotateX(-90deg);
+	transition: 0.3s;
+}
+
+header > button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: none;
+	border: none;
+	outline: none;
+	padding: 23px;
+	vertical-align: middle;
+	z-index: 1;
+}
+
+header > button > .bar1,
+header > button > .bar2,
+header > button > .bar3 {
+	height: 4px;
+	width: 35px;
+	background: #555;
+	transition: 0.5s;
+}
+
+header > button:hover {
+	cursor: pointer;
+}
+
+header > button:hover > .bar1,
+header > button:hover > .bar2,
+header > button:hover > .bar3,
+header > button:focus > .bar1,
+header > button:focus > .bar2,
+header > button:focus > .bar3 {
+	background: #F60;
+}
+
+header > button#nav-toggle.active > .bar1 {
+	transform: rotate(45deg) translate(6px, 8px);
+}
+
+header > button#nav-toggle.active > .bar2 {
+	width: 0;
+	margin: 6px auto;
+	opacity: 0;
+}
+
+header > button#nav-toggle.active > .bar3 {
+	transform: rotate(-45deg) translate(6px, -8px);
+}
+
+header > button > .bar2 {
+	margin: 6px 0;
+}
+
+header > hr {
 	border: none;
 	border-bottom: 1px solid #777;
 	width: 350px;
 	margin: 20px auto 50px;
+}
+
+nav {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	text-align: center;
+	transform: rotateX(90deg);
+	transform-origin: top;
+	transition: 0.3s;
+}
+
+nav > ul > li {
+	display: inline-block;
+	list-style: none;
+}
+
+nav > ul > li > a {
+	display: inline-block;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: 500;
+	text-decoration: none;
+	padding: 24px 25px;
+}
+
+nav#mobile-nav.active {
+	transform: initial;
+	transition: 0.6s;
+}
+
+section {
+	padding: 20px 100px;
+}
+
+/*Links style*/
+a {
+	color: #AAA;
+}
+
+a:hover, a:focus {
+	color: #F60;
+	transition: 0.3s;
 }
 
 .profile-pic {
@@ -48,15 +141,12 @@ article > hr {
 .profile-pic img {
 	border: 8px solid #EEE;
 	border-radius: 100%;
-	width: 200px;
-	height: 200px;
 }
 
 article p {
 	display: inline-block;
-	width: calc(100% - 400px);
+	width: calc(100% - 350px);
 	padding-left: 50px;
-	/*padding-top: 50px;*/
-	vertical-align: top;
+	vertical-align: -70%;
 	line-height: 1.5em;
 }
