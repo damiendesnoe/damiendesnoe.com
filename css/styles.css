@@ -9,6 +9,10 @@
 	font-family: Helvetica, Georgia, sans-serif, Arial, Serif;
 }
 
+p {
+	margin: 20px 0;
+}
+
 /*Set the page background and height*/
 html {
 	height: 100%;
@@ -141,6 +145,7 @@ section {
 /*Links style*/
 a {
 	color: #AAA;
+	transition: 0.3s;
 }
 
 a:hover, a:focus {
@@ -172,11 +177,55 @@ footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	padding: 50px 0;
+	padding: 50px;
 	text-align: center;
 }
 
+footer > form {
+	display: inline-block;
+	width: 49%;
+	vertical-align: middle;
+}
+
+input {
+	background: none;
+	outline: none;
+	height: 30px;
+	font-size: 1.2em;
+	transition: 0.3s;
+}
+
+input:not([type="submit"]) {
+	border: none;
+	width: 300px;
+	border-bottom: 1px solid #CCC;
+}
+
+input[type="submit"] {
+	border: 1px solid #CCC;
+	border-radius: 0 5px 5px 0;
+	padding: 0 10px;
+	margin-left: -4px;
+	height: 32px;
+	cursor: pointer;
+}
+
+input:hover {
+	color: #F60;
+	border-color: #F90;
+}
+
+input:focus {
+	border-color: #F60;
+}
+
 /*footer social links style*/
+footer > ul {
+	display: inline-block;
+	width: 49%;
+	vertical-align: middle;
+}
+
 footer > ul > li {
 	display: inline-block;
 	list-style: none;
