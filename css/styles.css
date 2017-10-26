@@ -35,7 +35,7 @@ header > h1 {
 }
 
 /*Hide the main title while showing the nav menu*/
-body.menu-active > header > h1 {
+body.nav-active > header > h1 {
 	transform: rotateX(-90deg);
 	transition: 0.3s;
 }
@@ -106,7 +106,7 @@ header > hr {
 }
 
 /*nav menu style. Hidden while disable*/
-nav {
+nav#main-nav {
 	position: fixed;
 	top: 0px;
 	width: 100%;
@@ -116,13 +116,13 @@ nav {
 	transition: 0.3s;
 }
 
-nav > ul > li {
+nav#main-nav > ul > li {
 	display: inline-block;
 	list-style: none;
 }
 
 /*nav menu links style*/
-nav > ul > li > a {
+nav#main-nav > ul > li > a {
 	display: inline-block;
 	text-align: center;
 	font-size: 1.2em;
@@ -132,7 +132,7 @@ nav > ul > li > a {
 }
 
 /*nav menu enabling animation*/
-nav#mobile-nav.active {
+nav#main-nav.active {
 	transform: initial;
 	transition: 0.6s;
 }
@@ -148,9 +148,14 @@ a {
 	transition: 0.3s;
 }
 
-a:hover, a:focus {
+a:hover, a:focus,
+a.active:hover, a.active:focus {
 	color: #F60;
 	transition: 0.3s;
+}
+
+a.active {
+	color: #F70;
 }
 
 /*profile picture style*/
