@@ -23,20 +23,32 @@
 	}
 
   if (window.innerWidth >= 1024) {
-    var container = document.getElementById("container");
-    var containerHeight = window.getComputedStyle(container).height;
-    var containerPad;
-    var containerHgt = "";
+    adjustVertical();
+    window.addEventListener("resize", adjustVertical);
 
-    for (var i = 0; i < containerHeight.length - 1; i++) {
-      if (containerHeight[i] !== ("p" || "x")) {
-        containerHgt += containerHeight[i];
+    function adjustVertical() {
+      // Aligne verticalement la section principale (container) du site sur desktop et la photo de profil de la page présentation
+
+      var containerEl = document.getElementById("container");
+      var containerHeight = parseCSS(window.getComputedStyle(containerEl).height);
+      var presentEl = document.getElementById("presentation");
+      var presentHeight = parseCSS(window.getComputedStyle(presentEl).height);
+      var profilePic = document.getElementById("profile-pic");
+      var containerPad = (window.innerHeight - containerHeight - 200) / 2;
+      var profilePicPad = (presentHeight - 216) / 2;
+
+      container.style.padding = containerPad + "px";
+      profilePic.style.padding = profilePicPad + "px 0";
+
+      function parseCSS(el) {
+        var elParsed = "";
+        for (var i = 0; i < el.length - 1; i++) {
+          if (el[i] !== ("p" || "x")) {
+            elParsed += el[i];
+          }
+        } return Number(elParsed);
       }
     }
-
-    containerPad = (window.innerHeight - Number(containerHgt) - 200) / 2 + "px";
-    container.style.paddingTop = containerPad;
-    container.style.paddingBottom = containerPad;
   }
 
   var results = "header height: ";

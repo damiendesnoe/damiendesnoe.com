@@ -6,6 +6,7 @@
 	-moz-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	color: #CCC;
+	overflow: hidden;
 	font-family: Helvetica, Georgia, sans-serif, Arial, Serif;
 }
 
@@ -158,12 +159,12 @@ a.active {
 }
 
 /*profile picture style*/
-.profile-pic {
+#profile-pic {
 	display: inline-block;
-	width: 220px;
+	height: 216px;
 }
 
-.profile-pic img {
+#profile-pic img {
 	border: 8px solid #EEE;
 	border-radius: 100%;
 }
@@ -171,9 +172,9 @@ a.active {
 /*text style and size*/
 article {
 	display: inline-block;
-	width: calc(100% - 350px);
+	width: calc(100% - 280px);
 	padding-left: 50px;
-	vertical-align: -70%;
+	vertical-align: top;
 	line-height: 1.5em;
 }
 
