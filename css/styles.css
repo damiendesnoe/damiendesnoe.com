@@ -26,12 +26,24 @@ body {
 	height: 100%;
 }
 
+header {
+	height: 80px;
+}
+
 /*Main title style*/
 header > h1 {
 	font-size: 2em;
+	padding-top: 17px;
 	text-align: center;
-	padding-top: 15px;
 	transform-origin: bottom;
+}
+
+/*header separator style*/
+header > hr {
+	border: none;
+	border-bottom: 1px solid #777;
+	width: 350px;
+	margin: 20px auto 0;
 }
 
 /*Hide the main title while showing the nav menu*/
@@ -97,14 +109,6 @@ header > button#nav-toggle.active > .bar3 {
 	transform: rotate(-45deg) translate(6px, -8px);
 }
 
-/*header separator style*/
-header > hr {
-	border: none;
-	border-bottom: 1px solid #777;
-	width: 350px;
-	margin: 20px auto 50px;
-}
-
 /*nav menu style. Hidden while disable*/
 nav#main-nav {
 	position: fixed;
@@ -128,18 +132,13 @@ nav#main-nav > ul > li > a {
 	font-size: 1.2em;
 	font-weight: 500;
 	text-decoration: none;
-	padding: 24px 25px;
+	padding: 23px 25px;
 }
 
 /*nav menu enabling animation*/
 nav#main-nav.active {
 	transform: initial;
 	transition: 0.6s;
-}
-
-/*body style*/
-section {
-	padding: 20px 100px;
 }
 
 /*Links style*/
@@ -161,6 +160,7 @@ a.active {
 /*profile picture style*/
 .profile-pic {
 	display: inline-block;
+	width: 220px;
 }
 
 .profile-pic img {
@@ -169,7 +169,7 @@ a.active {
 }
 
 /*text style and size*/
-article p {
+article {
 	display: inline-block;
 	width: calc(100% - 350px);
 	padding-left: 50px;
@@ -182,14 +182,13 @@ footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	padding: 50px;
 	text-align: center;
 }
 
 footer > form {
 	display: inline-block;
-	width: 49%;
-	vertical-align: middle;
+	/*width: 49%;*/
+	/*vertical-align: middle;*/
 }
 
 input {
@@ -208,7 +207,7 @@ input:not([type="submit"]) {
 
 input[type="submit"] {
 	border: 1px solid #CCC;
-	border-radius: 0 5px 5px 0;
+	border-radius: 5px 5px 5px 0;
 	padding: 0 10px;
 	margin-left: -4px;
 	height: 32px;
@@ -227,11 +226,11 @@ input:focus {
 /*footer social links style*/
 footer > ul {
 	display: inline-block;
-	width: 49%;
-	vertical-align: middle;
+	/*width: 49%;*/
+	/*vertical-align: middle;*/
 }
 
-footer > ul > li {
+footer > section > ul > li {
 	display: inline-block;
 	list-style: none;
 }
@@ -244,17 +243,63 @@ a.fa {
 	line-height: 2em;
 }
 
-a.fa-twitter:hover {
+a.fa-twitter:hover, a.fa-twitter:focus {
 	background:  #1DA1F2;
 	border-radius: 100%;
 }
 
-a.fa-facebook:hover {
+a.fa-facebook:hover, a.fa-facebook:focus {
 	background: #3b5998;
 	border-radius: 100%;
 }
 
-a.fa-linkedin:hover {
+a.fa-linkedin:hover, a.fa-linkedin:focus {
 	background: #0077b5;
 	border-radius: 100%;
+}
+
+@media all and (min-width: 1024px) {
+	/*Main title style*/
+	header > h1 {
+		font-size: 1.8em;
+		padding-top: 17px;
+	}
+
+	header > hr {
+		margin: 17px auto 0;
+	}
+
+	p {
+		margin: 15px 0;
+	}
+
+	nav#main-nav > ul > li > a {
+		padding: 23px 25px;
+	}
+
+	section#container {
+		padding: 15px 60px;
+	}
+
+	/*footer style and size*/
+	footer {
+		width: calc(100%);
+		font-size: 0.85em;
+	}
+
+	footer > section {
+		display: inline-block;
+		padding: 0 25px;
+		height: 120px;
+		vertical-align: middle;
+	}
+
+	footer > section.column-1 {
+		width: 500px;
+	}
+
+	/*footer social links style*/
+	footer > section > ul {
+		margin: 33px;
+	}
 }

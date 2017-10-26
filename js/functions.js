@@ -21,4 +21,38 @@
 			}
 		}
 	}
+
+  if (window.innerWidth >= 1024) {
+    var container = document.getElementById("container");
+    var containerHeight = window.getComputedStyle(container).height;
+    var containerPad;
+    var containerHgt = "";
+
+    for (var i = 0; i < containerHeight.length - 1; i++) {
+      if (containerHeight[i] !== ("p" || "x")) {
+        containerHgt += containerHeight[i];
+      }
+    }
+
+    containerPad = (window.innerHeight - Number(containerHgt) - 200) / 2 + "px";
+    container.style.paddingTop = containerPad;
+    container.style.paddingBottom = containerPad;
+  }
+
+  var results = "header height: ";
+  var hHeight = window.getComputedStyle(document.getElementById("header")).getPropertyValue("height");
+  var sHeight = window.getComputedStyle(document.getElementById("container")).getPropertyValue("height");
+  var fHeight = window.getComputedStyle(document.getElementById("footer")).getPropertyValue("height");
+  var wHeight = window.innerHeight;
+  results += hHeight;
+  results  += "<br>";
+  results += "section height: ";
+  results += sHeight;
+  results  += "<br>";
+  results += "Footer height: ";
+  results += fHeight;
+  results += "<br>";
+  results += "window height:";
+  results += wHeight;
+  // document.getElementById("container").innerHTML = results;
 })();

@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <header>
+    <header id="header">
       <h1 id="title">Damien Desnoë - Développeur web Front-End et WordPress</h1>
 
       <button id="nav-toggle">
@@ -32,19 +32,26 @@
       </ul>
     </nav>
 
-    <section>
-      <article class="">
-        <div class="profile-pic">
-          <img src="img/profile.jpg" alt="La plus belle photo de moi, sous un ciel bleu, en extérieur." width="200px" height="200px">
-        </div>
+    <section id="container">
+      <aside class="profile-pic">
+        <img src="img/profile.jpg" alt="La plus belle photo de moi, sous un ciel bleu, en extérieur." width="200px" height="200px">
+      </aside>
 
+      <article id="presentation">
         <p>
           Bonjour ! Je suis Damien Desnoë. J'ai découvert internet à l'âge de 12 ans.
-          J'ai tout de suite trouvé génial de pouvoir s'exprimer, et trouver des informations en quelques clics.<br><br>
+          J'ai tout de suite trouvé génial de pouvoir s'exprimer, et trouver des informations en quelques clics.
+        </p>
 
-          Puis j'ai découvert les travaux manuels: La mécanique automobile, la menuiserie... Je me suis également découvert une passion pour la moto.<br><br>
+        <p>
+          Puis j'ai découvert les travaux manuels: La mécanique automobile, la menuiserie... Je me suis également découvert une passion pour la moto.
+        </p>
 
-          Chacune de ces expériences m'a apporté beaucoup. Grâces à elles, j'ai pu développer ma créativité et atteindre une certaine ouverture d'esprit.<br><br>
+        <p>
+          Chacune de ces expériences m'a apporté beaucoup. Grâces à elles, j'ai pu développer ma créativité et atteindre une certaine ouverture d'esprit.
+        </p>
+
+        <p>
           Ainsi, plusieurs projets me sont venus en tête:
 
           Un blog dédié à ma passion pour la moto <i>- à venir -</i>,
@@ -55,24 +62,28 @@
       </article>
     </section>
 
-    <footer>
-      <form class="tips" action="index.html" method="post">
-        <p>
-          Psst ! Je prépare quelques astuces autour du développement web.
-          Elles seront disponibles bientôt. Inscris-toi ici pour être informé dès que possible !
-        </p>
+    <footer id="footer">
+      <section class="column-1">
+        <form class="tips" action="index.html" method="post">
+          <p>
+            Psst ! Je prépare quelques astuces autour du développement web.<br>
+            Elles seront disponibles bientôt. Inscris-toi vite pour être informé dès que possible !
+          </p>
 
-        <label for="user-email">
-          <input type="email" name="user-email" id="user-email" placeholder="Ecris ici ta meilleure adresse email">
-        </label>
-        <input type="submit" name="sign-up" value="Je m'inscris">
-      </form>
+          <label for="user-email">
+            <input type="email" name="user-email" id="user-email" placeholder="Ecris ici ta meilleure adresse email">
+          </label>
+          <input type="submit" name="sign-up" value="Je m'inscris">
+        </form>
+      </section>
 
-      <ul>
-        <li><a href="#" class="fa fa-facebook fa-2x"></a></li>
-        <li><a href="#" class="fa fa-twitter fa-2x"></a></li>
-        <li><a href="#" class="fa fa-linkedin fa-2x"></a></li>
-      </ul>
+      <section class="column-2">
+        <ul>
+          <li><a href="#" class="fa fa-facebook fa-2x"></a></li>
+          <li><a href="#" class="fa fa-twitter fa-2x"></a></li>
+          <li><a href="#" class="fa fa-linkedin fa-2x"></a></li>
+        </ul>
+      </section>
     </footer>
 
     <script src="js/functions.js"></script>
