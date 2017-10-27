@@ -35,7 +35,7 @@
       var presentEl = document.getElementById("presentation");
       var profilePicEl = document.getElementById("profile-pic");
       var headerEl = document.getElementById("header");
-      var footerEl = document.getElementById("footer");
+      var footerEl = document.getElementById("main-footer");
 
       var presentHgt = parseCSS(window.getComputedStyle(presentEl).height);
       var pictureHgt = parseCSS(window.getComputedStyle(profilePicEl).height);

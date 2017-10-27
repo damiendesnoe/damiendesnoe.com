@@ -6,12 +6,12 @@
 
     <title>Damien Desnoë - Développeur Front-End et WordPress</title>
 
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.min.css">
   </head>
 
   <body>
     <header id="header">
-      <h1 id="title"><span class="long-title">Damien Desnoë - </span>Développeur web Front-End<span class="long-title"> et WordPress</span></h1>
+      <h1 id="title"><span class="m-hidden">Damien Desnoë - </span>Développeur web Front-End<span class="m-hidden"> et WordPress</span></h1>
 
       <button id="nav-toggle">
         <div class="bar1"></div>
@@ -19,7 +19,7 @@
         <div class="bar3"></div>
       </button>
 
-      <div class="separator"></div>
+      <div class="separator m-hidden"></div>
     </header>
 
     <nav id="main-nav">
@@ -30,6 +30,14 @@
         <li><a href="#">Projets en cours</a></li>
         <li><a href="#">Contactez-moi</a></li>
       </ul>
+
+      <footer class="m-only">
+        <ul>
+          <li><a href="#" class="fa fa-facebook fa-2x"></a></li>
+          <li><a href="#" class="fa fa-twitter fa-2x"></a></li>
+          <li><a href="#" class="fa fa-linkedin fa-2x"></a></li>
+        </ul>
+      </footer>
     </nav>
 
     <section id="container">
@@ -62,7 +70,7 @@
       </article>
     </section>
 
-    <footer id="footer">
+    <footer id="main-footer">
       <section class="column-1">
         <form class="tips" action="index.html" method="post">
           <p>
@@ -77,7 +85,7 @@
         </form>
       </section>
 
-      <section class="column-2">
+      <section class="column-2 m-hidden">
         <ul>
           <li><a href="#" class="fa fa-facebook fa-2x"></a></li>
           <li><a href="#" class="fa fa-twitter fa-2x"></a></li>
@@ -86,7 +94,7 @@
       </section>
     </footer>
 
-    <script src="js/functions.js"></script>
+    <script src="js/functions.min.js"></script>
     <script src="https://use.fontawesome.com/32e9eedb26.js"></script>
   </body>
 </html>
