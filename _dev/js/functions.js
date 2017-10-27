@@ -22,23 +22,35 @@
 		}
 	}
 
-  if (window.innerWidth >= 1024) {
+  if (window.innerWidth >= 768) {
     adjustVertical();
-    window.addEventListener("resize", adjustVertical);
+    window.addEventListener("resize", function () {
+      setTimeout(adjustVertical, 300);
+    });
 
     function adjustVertical() {
       // Aligne verticalement la section principale (container) du site sur desktop et la photo de profil de la page présentation
 
       var containerEl = document.getElementById("container");
-      var containerHeight = parseCSS(window.getComputedStyle(containerEl).height);
       var presentEl = document.getElementById("presentation");
-      var presentHeight = parseCSS(window.getComputedStyle(presentEl).height);
-      var profilePic = document.getElementById("profile-pic");
-      var containerPad = (window.innerHeight - containerHeight - 200) / 2;
-      var profilePicPad = (presentHeight - 216) / 2;
+      var profilePicEl = document.getElementById("profile-pic");
+      var headerEl = document.getElementById("header");
+      var footerEl = document.getElementById("footer");
 
-      container.style.padding = containerPad + "px";
-      profilePic.style.padding = profilePicPad + "px 0";
+      var presentHgt = parseCSS(window.getComputedStyle(presentEl).height);
+      var pictureHgt = parseCSS(window.getComputedStyle(profilePicEl).height);
+      var headerHgt = parseCSS(window.getComputedStyle(headerEl).height);
+      var footerHgt = parseCSS(window.getComputedStyle(footerEl).height);
+      var containerHgt = presentHgt > pictureHgt ? presentHgt : pictureHgt;
+
+      var containerPad = setVerticalPad("container", window.innerHeight, containerHgt, (headerHgt + footerHgt));
+      var profilePicPad = setVerticalPad("profile picture", containerHgt, pictureHgt);
+      var presentPad = setVerticalPad("presentation", containerHgt, presentHgt);
+
+      containerEl.style.padding = containerPad > 20 ? containerPad + "px" : containerPad + "px 20px";
+      profilePicEl.style.padding = profilePicPad + "px 0";
+      presentEl.style.paddingTop = presentPad + "px";
+      presentEl.style.paddingBottom = presentPad + "px";
 
       function parseCSS(el) {
         var elParsed = "";
@@ -47,6 +59,11 @@
             elParsed += el[i];
           }
         } return Number(elParsed);
+      }
+
+      function setVerticalPad(element, containerHeight, contentHeight, offset = 0) {
+        console.log(element + "\ncontainer height: " + contentHeight + "\n content height: " + contentHeight + "\n offset: " + offset + "\n" + ((containerHeight - contentHeight) / 2));
+        return (containerHeight - contentHeight - offset) / 2;
       }
     }
   }

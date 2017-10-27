@@ -11,7 +11,7 @@
 }
 
 p {
-	margin: 20px 0;
+	margin: 15px 0;
 }
 
 /*Set the page background and height*/
@@ -28,12 +28,12 @@ body {
 }
 
 header {
-	height: 80px;
+	height: 60px;
 }
 
 /*Main title style*/
 header > h1 {
-	font-size: 2em;
+	font-size: 1.3em;
 	padding-top: 17px;
 	text-align: center;
 	transform-origin: bottom;
@@ -43,8 +43,8 @@ header > h1 {
 header > hr {
 	border: none;
 	border-bottom: 1px solid #777;
-	width: 350px;
-	margin: 20px auto 0;
+	width: 260px;
+	margin: 15px auto 0;
 }
 
 /*Hide the main title while showing the nav menu*/
@@ -61,7 +61,7 @@ header > button {
 	background: none;
 	border: none;
 	outline: none;
-	padding: 23px;
+	padding: 17px;
 	vertical-align: middle;
 	z-index: 1;
 }
@@ -70,8 +70,8 @@ header > button {
 header > button > .bar1,
 header > button > .bar2,
 header > button > .bar3 {
-	height: 4px;
-	width: 35px;
+	height: 3px;
+	width: 30px;
 	background: #555;
 	transition: 0.5s;
 }
@@ -97,17 +97,17 @@ header > button:focus > .bar3 {
 
 /*nav menu animation of after clicking/taping*/
 header > button#nav-toggle.active > .bar1 {
-	transform: rotate(45deg) translate(6px, 8px);
+	transform: rotate(45deg) translate(4px, 8px);
 }
 
 header > button#nav-toggle.active > .bar2 {
 	width: 0;
-	margin: 6px auto;
+	margin: 4px auto;
 	opacity: 0;
 }
 
 header > button#nav-toggle.active > .bar3 {
-	transform: rotate(-45deg) translate(6px, -8px);
+	transform: rotate(-45deg) translate(2px, -6px);
 }
 
 /*nav menu style. Hidden while disable*/
@@ -130,10 +130,10 @@ nav#main-nav > ul > li {
 nav#main-nav > ul > li > a {
 	display: inline-block;
 	text-align: center;
-	font-size: 1.2em;
+	font-size: 1em;
 	font-weight: 500;
 	text-decoration: none;
-	padding: 23px 25px;
+	padding: 19px 20px;
 }
 
 /*nav menu enabling animation*/
@@ -159,20 +159,22 @@ a.active {
 }
 
 /*profile picture style*/
-#profile-pic {
+/*#profile-pic {
 	display: inline-block;
-	height: 216px;
+	height: 166px;
 }
 
 #profile-pic img {
+	width: 150px;
+	height: 150px;
 	border: 8px solid #EEE;
 	border-radius: 100%;
-}
+}*/
 
 /*text style and size*/
 article {
 	display: inline-block;
-	width: calc(100% - 280px);
+	width: calc(100% - 230px);
 	padding-left: 50px;
 	vertical-align: top;
 	line-height: 1.5em;
@@ -251,27 +253,161 @@ a.fa-linkedin:hover, a.fa-linkedin:focus {
 	border-radius: 100%;
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 768px) {
 	/*Main title style*/
 	header > h1 {
-		font-size: 1.8em;
+		font-size: 1.3em;
 		padding-top: 17px;
 	}
 
+	/*header separator style*/
 	header > hr {
-		margin: 17px auto 0;
+		width: 260px;
+		margin: 15px auto 0;
 	}
 
+	/*nav menu button*/
+	header > button {
+		padding: 17px;
+	}
+
+	/*nav menu links style*/
+	nav#main-nav > ul > li > a {
+		font-size: 1em;
+		padding: 19px 20px;
+	}
+
+	/*profile picture style*/
+	#profile-pic {
+		display: inline-block;
+		height: 166px;
+	}
+
+	#profile-pic img {
+		width: 150px;
+		height: 150px;
+		border: 6px solid #EEE;
+		border-radius: 100%;
+	}
+
+	/*text style and size*/
+	section#container {
+		font-size: 0.8em;
+		overflow-y: auto;
+	}
+
+	footer {
+		font-size: 0.7em;
+	}
+
+	footer > section {
+		display: inline-block;
+		padding: 0 25px;
+		height: 105px;
+		vertical-align: bottom;
+	}
+
+	footer > section.column-1 {
+		width: 420px;
+	}
+
+	footer > section.column-2 {
+		width: 240px;
+	}
+
+	input {
+		/*font-size: 0.9em;*/
+	}
+
+	input:not([type="submit"]) {
+		width: 250px;
+	}
+
+	/*footer social links style*/
+	footer > section > ul {
+		margin: 33px 0;
+	}
+
+	footer > section > ul,
+	footer > section > ul > li {
+		height: 44px;
+	}
+
+	a.fa {
+		margin: 0 15px;
+	}
+}
+
+@media all and (min-width: 1024px) {
 	p {
 		margin: 15px 0;
 	}
 
+	header {
+		height: 80px;
+	}
+
+	/*Main title style*/
+	header > h1 {
+		font-size: 1.6em;
+		padding-top: 17px;
+	}
+
+	/*header separator style*/
+	header > hr {
+		width: 320px;
+		margin: 16px auto 0;
+	}
+
+	/*nav menu button*/
+	header > button {
+		padding: 20px;
+	}
+
+	/*nav menu button appearance*/
+	header > button > .bar1,
+	header > button > .bar2,
+	header > button > .bar3 {
+		height: 4px;
+		width: 35px;
+	}
+
+	/*nav menu animation of after clicking/taping*/
+	header > button#nav-toggle.active > .bar1 {
+		transform: rotate(45deg) translate(6px, 8px);
+	}
+
+	header > button#nav-toggle.active > .bar2 {
+		margin: 6px auto;
+	}
+
+	header > button#nav-toggle.active > .bar3 {
+		transform: rotate(-45deg) translate(6px, -8px);
+	}
+
+	/*nav menu links style*/
 	nav#main-nav > ul > li > a {
-		padding: 23px 25px;
+		font-size: 1.2em;
+		padding: 20px 25px;
 	}
 
 	section#container {
-		padding: 15px 60px;
+		padding: 0 60px;
+		font-size: 1em;
+	}
+
+	/*profile picture style*/
+	#profile-pic {
+		height: 216px;
+	}
+
+	#profile-pic img {
+		width: 200px;
+		height: 200px;
+	}
+
+	article {
+		width: calc(100% - 280px);
 	}
 
 	/*footer style and size*/
@@ -281,10 +417,7 @@ a.fa-linkedin:hover, a.fa-linkedin:focus {
 	}
 
 	footer > section {
-		display: inline-block;
-		padding: 0 25px;
 		height: 120px;
-		vertical-align: bottom;
 	}
 
 	footer > section.column-1 {
@@ -293,6 +426,10 @@ a.fa-linkedin:hover, a.fa-linkedin:focus {
 
 	footer > section.column-2 {
 		width: 400px;
+	}
+
+	input:not([type="submit"]) {
+		width: 300px;
 	}
 
 	/*footer social links style*/
@@ -307,6 +444,26 @@ a.fa-linkedin:hover, a.fa-linkedin:focus {
 }
 
 @media all and (min-width: 1280px) {
+	header > h1 {
+		font-size: 2em;
+	}
+
+	/*header separator style*/
+	header > hr {
+		width: 350px;
+	}
+
+	/*nav menu button*/
+	header > button {
+		padding: 23px;
+	}
+
+	/*nav menu links style*/
+	nav#main-nav > ul > li > a {
+		font-size: 1.3em;
+		padding: 23px 30px;
+	}
+
 	footer {
 		font-size: 1em;
 	}
@@ -317,6 +474,10 @@ a.fa-linkedin:hover, a.fa-linkedin:focus {
 
 	footer > section.column-1 {
 		width: calc(50% - 55px);
+	}
+
+	footer p {
+		font-size: 0.9em;
 	}
 
 	footer > section.column-2 {
