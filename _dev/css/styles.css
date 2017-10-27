@@ -6,7 +6,7 @@
 	-moz-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	color: #CCC;
-	overflow: hidden;
+	overflow-x: hidden;
 	font-family: Helvetica, Georgia, sans-serif, Arial, Serif;
 }
 
@@ -14,44 +14,27 @@ p {
 	margin: 15px 0;
 }
 
-/*Set the page background and height*/
-html {
-	height: 100%;
-	background: url("../img/biker-motorcycle-ride-oil-paint-vintage.jpg") no-repeat;
-	background-size: 115% 100%;
-}
-
-/*Set the layout background and height*/
-body {
-	background:	rgba(0, 0, 0, 0.9);
-	height: 100%;
-}
-
 header {
-	height: 60px;
+	background: #222;
+	padding: 0 50px 0 0;
 }
 
 /*Main title style*/
 header > h1 {
-	font-size: 1.3em;
-	padding-top: 17px;
+	font-size: 1.1em;
+	line-height: 51px;
 	text-align: center;
-	transform-origin: bottom;
+}
+
+header > h1 > .long-title {
+	display: none;
 }
 
 /*header separator style*/
-header > hr {
-	border: none;
-	border-bottom: 1px solid #777;
-	width: 260px;
-	margin: 15px auto 0;
+header > .separator {
+	display: none;
 }
 
-/*Hide the main title while showing the nav menu*/
-body.nav-active > header > h1 {
-	transform: rotateX(-90deg);
-	transition: 0.3s;
-}
 
 /*nav menu button*/
 header > button {
@@ -61,7 +44,7 @@ header > button {
 	background: none;
 	border: none;
 	outline: none;
-	padding: 17px;
+	padding: 15px;
 	vertical-align: middle;
 	z-index: 1;
 }
@@ -72,7 +55,7 @@ header > button > .bar2,
 header > button > .bar3 {
 	height: 3px;
 	width: 30px;
-	background: #555;
+	background: #777;
 	transition: 0.5s;
 }
 
@@ -113,16 +96,20 @@ header > button#nav-toggle.active > .bar3 {
 /*nav menu style. Hidden while disable*/
 nav#main-nav {
 	position: fixed;
-	top: 0px;
+	top: 51px;
 	width: 100%;
+	height: 100%;
+	background: #222;
+	border-top: 1px solid #777;
 	text-align: center;
+	z-index: 1;
 	transform: rotateX(90deg);
 	transform-origin: top;
 	transition: 0.3s;
 }
 
 nav#main-nav > ul > li {
-	display: inline-block;
+	display: block;
 	list-style: none;
 }
 
@@ -133,7 +120,9 @@ nav#main-nav > ul > li > a {
 	font-size: 1em;
 	font-weight: 500;
 	text-decoration: none;
-	padding: 19px 20px;
+	padding: 15px 0;
+	width: 100%;
+	border-bottom: 1px solid #777;
 }
 
 /*nav menu enabling animation*/
@@ -159,46 +148,49 @@ a.active {
 }
 
 /*profile picture style*/
-/*#profile-pic {
-	display: inline-block;
-	height: 166px;
+#profile-pic {
+	display: none;
 }
 
-#profile-pic img {
-	width: 150px;
-	height: 150px;
-	border: 8px solid #EEE;
-	border-radius: 100%;
-}*/
-
 /*text style and size*/
-article {
-	display: inline-block;
-	width: calc(100% - 230px);
-	padding-left: 50px;
-	vertical-align: top;
+section#container > article {
+	padding: 10px;
 	line-height: 1.5em;
 }
 
 /*footer style and size*/
 footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
+	width: calc(100% - 20px);
+	background: #222;
+	padding: 10px;
+	font-size: 0.8em;
 	text-align: center;
+}
+
+footer > section.column-2 {
+	display: none;
+}
+
+body.nav-active > footer > section.column-2 {
+	display: initial;
+	position: fixed;
+	bottom: 20px;
+	left: 0;
+	width: 100%;
+	z-index: 2;
 }
 
 input {
 	background: none;
 	outline: none;
 	height: 30px;
-	font-size: 1.2em;
+	font-size: 0.9em;
 	transition: 0.3s;
 }
 
 input:not([type="submit"]) {
 	border: none;
-	width: 300px;
+	width: 180px;
 	border-bottom: 1px solid #CCC;
 }
 
@@ -254,14 +246,51 @@ a.fa-linkedin:hover, a.fa-linkedin:focus {
 }
 
 @media all and (min-width: 768px) {
+	/*Styles reset*/
+	* {
+		overflow: hidden;
+	}
+
+	/*Set the page background and height*/
+	html {
+		height: 100%;
+		background: url("../img/biker-motorcycle-ride-oil-paint-vintage.jpg") no-repeat;
+		background-size: 115% 100%;
+	}
+
+	/*Set the layout background and height*/
+	body {
+		background:	rgba(0, 0, 0, 0.9);
+		height: 100%;
+	}
+
+	header {
+		background: none;
+	}
+
 	/*Main title style*/
 	header > h1 {
 		font-size: 1.3em;
+		line-height: 1em;
 		padding-top: 17px;
+		transform-origin: bottom;
+	}
+
+	/*Hide the main title while showing the nav menu*/
+	body.nav-active > header > h1 {
+		transform: rotateX(-90deg);
+		transition: 0.3s;
+	}
+
+	header > h1 > .long-title {
+		display: initial;
 	}
 
 	/*header separator style*/
-	header > hr {
+	header > .separator {
+		display: block;
+		border: none;
+		border-bottom: 1px solid #777;
 		width: 260px;
 		margin: 15px auto 0;
 	}
@@ -271,10 +300,32 @@ a.fa-linkedin:hover, a.fa-linkedin:focus {
 		padding: 17px;
 	}
 
+	/*nav menu button appearance*/
+	header > button > .bar1,
+	header > button > .bar2,
+	header > button > .bar3 {
+		background: #555;
+	}
+
+	/*nav menu style. Hidden while disable*/
+	nav#main-nav {
+		top: 0;
+		height: initial;
+		background: none;
+		border: none;
+		z-index: 0;
+	}
+
+	nav#main-nav > ul > li {
+		display: inline-block;
+	}
+
 	/*nav menu links style*/
 	nav#main-nav > ul > li > a {
 		font-size: 1em;
 		padding: 19px 20px;
+		width: initial;
+		border: none;
 	}
 
 	/*profile picture style*/
@@ -296,7 +347,18 @@ a.fa-linkedin:hover, a.fa-linkedin:focus {
 		overflow-y: auto;
 	}
 
+	/*text style and size*/
+	section#container > article {
+		display: inline-block;
+		width: calc(100% - 230px);
+		padding: 0 0 0 50px;
+		vertical-align: top;
+	}
+
+	/*footer style and size*/
 	footer {
+		position: fixed;
+		bottom: 0;
 		font-size: 0.7em;
 	}
 
@@ -354,7 +416,7 @@ a.fa-linkedin:hover, a.fa-linkedin:focus {
 	}
 
 	/*header separator style*/
-	header > hr {
+	header > .separator {
 		width: 320px;
 		margin: 16px auto 0;
 	}
@@ -449,7 +511,7 @@ a.fa-linkedin:hover, a.fa-linkedin:focus {
 	}
 
 	/*header separator style*/
-	header > hr {
+	header > .separator {
 		width: 350px;
 	}
 
