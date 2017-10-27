@@ -186,12 +186,6 @@ footer {
 	text-align: center;
 }
 
-footer > form {
-	display: inline-block;
-	/*width: 49%;*/
-	/*vertical-align: middle;*/
-}
-
 input {
 	background: none;
 	outline: none;
@@ -227,8 +221,6 @@ input:focus {
 /*footer social links style*/
 footer > ul {
 	display: inline-block;
-	/*width: 49%;*/
-	/*vertical-align: middle;*/
 }
 
 footer > section > ul > li {
@@ -292,15 +284,59 @@ a.fa-linkedin:hover, a.fa-linkedin:focus {
 		display: inline-block;
 		padding: 0 25px;
 		height: 120px;
-		vertical-align: middle;
+		vertical-align: bottom;
 	}
 
 	footer > section.column-1 {
 		width: 500px;
 	}
 
+	footer > section.column-2 {
+		width: 400px;
+	}
+
 	/*footer social links style*/
 	footer > section > ul {
 		margin: 33px;
+	}
+
+	footer > section > ul,
+	footer > section > ul > li {
+		height: 54px;
+	}
+}
+
+@media all and (min-width: 1280px) {
+	footer {
+		font-size: 1em;
+	}
+
+	footer > section {
+		height: 150px;
+	}
+
+	footer > section.column-1 {
+		width: calc(50% - 55px);
+	}
+
+	footer > section.column-2 {
+		width: calc(50% - 55px);
+	}
+
+	footer form {
+		padding: 10px;
+	}
+
+	input:not([type="submit"]) {
+		width: 350px;
+	}
+
+	footer > section > ul {
+		margin: 43px;
+	}
+
+	footer > section > ul,
+	footer > section > ul > li {
+		height: 64px;
 	}
 }
