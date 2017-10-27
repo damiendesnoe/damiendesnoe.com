@@ -5,7 +5,7 @@
 		document.getElementById("main-nav").classList.toggle("active");
 		document.getElementById("nav-toggle").classList.toggle("active");
 
-		if (window.innerWidth < 1024) {
+		if (window.innerWidth < 768) {
 			document.body.classList.toggle("nav-active");
 		} else {
 			if(!document.body.classList.contains("nav-active")) {
@@ -43,9 +43,9 @@
       var footerHgt = parseCSS(window.getComputedStyle(footerEl).height);
       var containerHgt = presentHgt > pictureHgt ? presentHgt : pictureHgt;
 
-      var containerPad = setVerticalPad("container", window.innerHeight, containerHgt, (headerHgt + footerHgt));
-      var profilePicPad = setVerticalPad("profile picture", containerHgt, pictureHgt);
-      var presentPad = setVerticalPad("presentation", containerHgt, presentHgt);
+      var containerPad = (window.innerHeight - containerHgt - (headerHgt + footerHgt)) / 2;
+      var profilePicPad = (containerHgt - pictureHgt) / 2;
+      var presentPad = (containerHgt - presentHgt) / 2;
 
       containerEl.style.padding = containerPad > 20 ? containerPad + "px" : containerPad + "px 20px";
       profilePicEl.style.padding = profilePicPad + "px 0";
@@ -60,28 +60,6 @@
           }
         } return Number(elParsed);
       }
-
-      function setVerticalPad(element, containerHeight, contentHeight, offset = 0) {
-        console.log(element + "\ncontainer height: " + contentHeight + "\n content height: " + contentHeight + "\n offset: " + offset + "\n" + ((containerHeight - contentHeight) / 2));
-        return (containerHeight - contentHeight - offset) / 2;
-      }
     }
   }
-
-  var results = "header height: ";
-  var hHeight = window.getComputedStyle(document.getElementById("header")).getPropertyValue("height");
-  var sHeight = window.getComputedStyle(document.getElementById("container")).getPropertyValue("height");
-  var fHeight = window.getComputedStyle(document.getElementById("footer")).getPropertyValue("height");
-  var wHeight = window.innerHeight;
-  results += hHeight;
-  results  += "<br>";
-  results += "section height: ";
-  results += sHeight;
-  results  += "<br>";
-  results += "Footer height: ";
-  results += fHeight;
-  results += "<br>";
-  results += "window height:";
-  results += wHeight;
-  // document.getElementById("container").innerHTML = results;
 })();
