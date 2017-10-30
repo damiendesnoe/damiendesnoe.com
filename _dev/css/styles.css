@@ -43,6 +43,7 @@ input {
 input:not([type="submit"]) {
 	width: 180px;
 	border-bottom: 1px solid #CCC;
+	border-radius: 0;
 }
 
 input[type="submit"] {
@@ -210,6 +211,7 @@ footer li {
 	list-style: none;
 }
 
+/*Styles for Phone only*/
 @media all and (max-width: 767px) {
 	.m-hidden {
 		display: none;
@@ -240,21 +242,34 @@ footer li {
 		z-index: 1;
 	}
 
+	nav#main-nav > ul {
+		height: calc(100% - 69px);
+	}
+
 	nav#main-nav > ul > li {
 		display: block;
-		height: 49px;
 	}
 
 	/*nav menu links style*/
 	nav#main-nav > ul > li > a {
 		padding: 15px 0;
 		width: 100%;
+		font-weight: initial;
 		border-bottom: 1px solid #777;
+	}
+
+	nav#main-nav.active {
+		overflow: auto;
 	}
 
 	nav#main-nav > ul > li > a:hover,
 	nav#main-nav > ul > li > a:focus {
 		background: #111;
+	}
+
+	section#container > * > *,
+	section#container > * > * > * {
+		color: #222;
 	}
 
 	/*profile picture style*/
@@ -276,6 +291,7 @@ footer li {
 		font-size: 0.75em;
 		padding: 10px;
 		width: calc(100% - 20px);
+		z-index: 1;
 	}
 
 	footer#main-footer {
@@ -283,6 +299,7 @@ footer li {
 	}
 }
 
+/*Styles for Tablet*/
 @media all and (min-width: 768px) {
 	/*Styles reset*/
 	* {
@@ -397,6 +414,7 @@ footer li {
 	}
 }
 
+/*Styles for small screen size PC*/
 @media all and (min-width: 1024px) {
 	header {
 		height: 80px;
@@ -486,6 +504,7 @@ footer li {
 	}
 }
 
+/*Styles for medium screen size PC*/
 @media all and (min-width: 1280px) {
 	header > h1 {
 		font-size: 2em;
