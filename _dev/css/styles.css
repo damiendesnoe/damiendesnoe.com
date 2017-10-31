@@ -127,10 +127,7 @@ button#nav-toggle:hover {
 
 button#nav-toggle:hover > .bar1,
 button#nav-toggle:hover > .bar2,
-button#nav-toggle:hover > .bar3,
-button#nav-toggle:focus > .bar1,
-button#nav-toggle:focus > .bar2,
-button#nav-toggle:focus > .bar3 {
+button#nav-toggle:hover > .bar3 {
 	background: #F60;
 }
 
@@ -231,6 +228,13 @@ footer li {
 	header > h1 {
 		font-size: 1.1em;
 		line-height: 51px;
+	}
+
+	/*Nav menu button style while taping on it*/
+	button#nav-toggle:focus > .bar1,
+	button#nav-toggle:focus > .bar2,
+	button#nav-toggle:focus > .bar3 {
+		background: #F60;
 	}
 
 	/*nav menu style. Hidden while disable*/
