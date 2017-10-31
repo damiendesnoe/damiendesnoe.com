@@ -554,6 +554,10 @@ footer li {
 		width: 350px;
 	}
 
+	input[type="submit"] {
+		margin-left: -5px;
+	}
+
 	footer > section > ul {
 		margin: 43px;
 	}
