@@ -1,5 +1,9 @@
 (function () {
   document.getElementById("nav-toggle").addEventListener("click", showHideMenu);
+  var navBtnList = Array.from(document.getElementsByClassName("nav-btn"));
+  navBtnList.forEach(function (btn) {
+    btn.addEventListener("click", changeSection);
+  });
 
 	function showHideMenu() {
 		document.getElementById("main-nav").classList.toggle("active");
@@ -22,6 +26,13 @@
 		}
 	}
 
+  function changeSection() {
+    navBtnList.forEach(function (btn) {
+      btn.classList.remove("active");
+    });
+    this.classList.toggle("active");
+  }
+
   if (window.innerWidth >= 768) {
     adjustVertical();
     window.addEventListener("resize", function () {
@@ -32,33 +43,36 @@
       // Aligne verticalement la section principale (container) du site sur desktop et la photo de profil de la page présentation
 
       var containerEl = document.getElementById("container");
-      var presentEl = document.getElementById("presentation");
-      var profilePicEl = document.getElementById("profile-pic");
+      var cntElList = Array.from(document.getElementsByClassName("center-vertical"));
       var headerEl = document.getElementById("header");
       var footerEl = document.getElementById("main-footer");
 
-      var presentHgt = parseCSS(window.getComputedStyle(presentEl).height);
-      var pictureHgt = parseCSS(window.getComputedStyle(profilePicEl).height);
       var headerHgt = parseCSS(window.getComputedStyle(headerEl).height);
       var footerHgt = parseCSS(window.getComputedStyle(footerEl).height);
-      var containerHgt = presentHgt > pictureHgt ? presentHgt : pictureHgt;
+      var containerHgt = parseCSS(window.getComputedStyle(containerEl).height);
 
       var containerPad = (window.innerHeight - containerHgt - (headerHgt + footerHgt)) / 2;
-      var profilePicPad = (containerHgt - pictureHgt) / 2;
-      var presentPad = (containerHgt - presentHgt) / 2;
 
+      // Ajout des Padding top et bottom pour centrer les éléments verticalement
       containerEl.style.padding = containerPad > 20 ? containerPad + "px" : containerPad + "px 20px";
-      profilePicEl.style.padding = profilePicPad + "px 0";
-      presentEl.style.paddingTop = presentPad + "px";
-      presentEl.style.paddingBottom = presentPad + "px";
+      cntElList.forEach(function (el) {
+        var contentHgt = parseCSS(window.getComputedStyle(el).height);
 
-      function parseCSS(el) {
-        var elParsed = "";
-        for (var i = 0; i < el.length - 1; i++) {
-          if (el[i] !== ("p" || "x")) {
-            elParsed += el[i];
+        if (contentHgt < containerHgt) {
+          var contentPad = (containerHgt - contentHgt) / 2;
+          el.style.marginTop = contentPad + "px";
+          el.style.marginBottom = contentPad + "px";
+          console.log("container Height: " + containerHgt + "\ncontentHeight: " + contentHgt + "\ncontent Pad: " + contentPad);
+        }
+      });
+
+      function parseCSS(size) {
+        var sizeParsed = "";
+        for (var i = 0; i < size.length - 1; i++) {
+          if (size[i] !== ("p" || "x")) {
+            sizeParsed += size[i];
           }
-        } return Number(elParsed);
+        } return Number(sizeParsed);
       }
     }
   }

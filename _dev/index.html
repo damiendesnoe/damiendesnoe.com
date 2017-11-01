@@ -6,7 +6,7 @@
 
     <title>Damien Desnoë - Développeur Front-End et WordPress</title>
 
-    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
 
   <body>
@@ -24,11 +24,11 @@
 
     <nav id="main-nav">
       <ul>
-        <li><a href="#" class="active">Accueil</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Projets en cours</a></li>
-        <li><a href="#">Contactez-moi</a></li>
+        <li><a href="#" class="nav-btn home active">Accueil</a></li>
+        <li><a href="#" class="nav-btn">Blog</a></li>
+        <li><a href="#" class="nav-btn">Portfolio</a></li>
+        <li><a href="#" class="nav-btn">Projets en cours</a></li>
+        <li><a href="#" class="nav-btn">Contactez-moi</a></li>
       </ul>
 
       <footer class="m-only">
@@ -41,7 +41,7 @@
     </nav>
 
     <section id="container">
-      <aside id="profile-pic">
+      <!-- <aside id="profile-pic">
         <img src="img/profile.jpg" alt="La plus belle photo de moi, sous un ciel bleu, en extérieur." width="200px" height="200px">
       </aside>
 
@@ -67,7 +67,71 @@
           ce site, dédié à mon activité professionnelle,
           et d'autres à venir...
         </p>
+      </article> -->
+
+      <article class="blog-resume center-vertical">
+        <a href="#">
+          <div class="illustration">
+            <img src="img/illustration-1.jpg" alt="Le Chevasse Park de Liverpool (England), sous un soleil fabuleux" width="280" height="168">
+          </div>
+
+          <h1>Cette expérience qui m'a rendu meilleur</h1>
+
+          <p>
+            Avez-vous déjà vécu une expérience hors du commun ? Je parle ici d'une expérience dont vous n'auriez jamais imaginé...
+            <!-- qu'elle aurait autant d'impact sur votre vie. Quelque chose qui vous transforme litéralement, tout en vous rendant meilleur. Aujourd'hui, j'ai décidé de participer à un événement inter-blogueurs, et de vous partager cette expérience qui a considérablement changé ma vie ! -->
+          </p>
+        </a>
       </article>
+
+      <article class="blog-resume center-vertical">
+        <a href="#">
+          <div class="illustration">
+            <img src="img/illustration-1.jpg" alt="Le Chevasse Park de Liverpool (England), sous un soleil fabuleux" width="280" height="168">
+          </div>
+
+          <h1>Cette expérience qui m'a rendu meilleur</h1>
+
+          <p>
+            Avez-vous déjà vécu une expérience hors du commun ? Je parle ici d'une expérience dont vous n'auriez jamais imaginé...
+            <!-- qu'elle aurait autant d'impact sur votre vie. Quelque chose qui vous transforme litéralement, tout en vous rendant meilleur. Aujourd'hui, j'ai décidé de participer à un événement inter-blogueurs, et de vous partager cette expérience qui a considérablement changé ma vie ! -->
+          </p>
+        </a>
+      </article>
+
+      <article class="blog-resume center-vertical">
+        <a href="#">
+          <div class="illustration">
+            <img src="img/illustration-1.jpg" alt="Le Chevasse Park de Liverpool (England), sous un soleil fabuleux" width="280" height="168">
+          </div>
+
+          <h1>Cette expérience qui m'a rendu meilleur</h1>
+
+          <p>
+            Avez-vous déjà vécu une expérience hors du commun ? Je parle ici d'une expérience dont vous n'auriez jamais imaginé...
+            <!-- qu'elle aurait autant d'impact sur votre vie. Quelque chose qui vous transforme litéralement, tout en vous rendant meilleur. Aujourd'hui, j'ai décidé de participer à un événement inter-blogueurs, et de vous partager cette expérience qui a considérablement changé ma vie ! -->
+          </p>
+        </a>
+      </article>
+
+      <!-- <aside id="profile-pic">
+
+      </aside>
+
+      <article id="presentation">
+        <form class="contact" action="index.html" method="post">
+          <label for="mail-subject">
+            <input type="text" name="mail-subject" id="mail-subject" placeholder="Quel est votre question ?">
+          </label>
+          <label for="usr-email">
+            <input type="email" name="usr-email" id="usr-email" placeholder="A quelle adresse dois-je répondre ?">
+          </label>
+
+          <textarea name="email" rows="8" cols="80" placeholder="Comment puis-je vous aider ?"></textarea>
+
+          <input type="submit" name="send" value="Envoyer">
+        </form>
+      </article> -->
     </section>
 
     <footer id="main-footer">
@@ -81,7 +145,7 @@
           <label for="user-email">
             <input type="email" name="user-email" id="user-email" placeholder="Ecris ici ta meilleure adresse email">
           </label>
-          <input type="submit" name="sign-up" value="Je m'inscris">
+          <input type="submit" name="sign-up" id="newsltr-signup" value="Je m'inscris">
         </form>
       </section>
 
@@ -94,7 +158,7 @@
       </section>
     </footer>
 
-    <script src="js/functions.min.js"></script>
+    <script src="js/functions.js"></script>
     <script src="https://use.fontawesome.com/32e9eedb26.js"></script>
   </body>
 </html>

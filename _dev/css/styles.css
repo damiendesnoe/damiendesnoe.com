@@ -11,17 +11,17 @@
 }
 
 p {
-	margin: 15px 0;
+	padding: 15px 0;
 }
 
 /*Links styles*/
 a {
 	color: #AAA;
+	text-decoration: none;
 	transition: 0.3s;
 }
 
-a:hover, a:focus,
-a.active:hover, a.active:focus {
+a:hover, a.active:hover {
 	color: #F60;
 	transition: 0.3s;
 }
@@ -40,6 +40,15 @@ input {
 	transition: 0.3s;
 }
 
+textarea {
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid transparent;
+	border-radius: 5px;
+	outline: none;
+	font-size: 0.9em;
+	transition: 0.3s;
+}
+
 input:not([type="submit"]) {
 	width: 180px;
 	border-bottom: 1px solid #CCC;
@@ -48,26 +57,33 @@ input:not([type="submit"]) {
 
 input[type="submit"] {
 	border: 1px solid #CCC;
-	border-radius: 5px 5px 5px 0;
+	border-radius: 5px;
 	padding: 0 10px;
-	margin-left: -4px;
 	height: 32px;
 	cursor: pointer;
 }
 
-input:hover {
+form.contact input {
+	margin: 0 20px 0 0;
+}
+
+input#newsltr-signup {
+	border-radius: 5px 5px 5px 0;
+	margin-left: -4px;
+}
+
+input:hover, textarea:hover {
 	color: #F60;
 	border-color: #F90;
 }
 
-input:focus {
+input:focus, textarea:focus {
 	border-color: #F60;
 }
 
 /*Glyphicon links styles*/
 a.fa {
 	color: white;
-	text-decoration: none;
 	margin: 0 20px;
 	width: 2em;
 	line-height: 2em;
@@ -112,6 +128,7 @@ button#nav-toggle > .bar2,
 button#nav-toggle > .bar3 {
 	height: 3px;
 	width: 30px;
+	border-radius: 10px;
 	background: #777;
 	transition: 0.5s;
 }
@@ -168,7 +185,6 @@ nav#main-nav > ul > li > a {
 	text-align: center;
 	font-size: 1em;
 	font-weight: 500;
-	text-decoration: none;
 }
 
 /*nav menu enabling animation*/
@@ -188,7 +204,6 @@ nav#main-nav.active {
 
 /*text style and size*/
 section#container > article {
-	padding: 10px;
 	line-height: 1.5em;
 }
 
@@ -212,6 +227,10 @@ footer li {
 @media all and (max-width: 767px) {
 	.m-hidden {
 		display: none;
+	}
+
+	a:focus, a.active:focus {
+		color: #F60;
 	}
 
 	body.nav-active {
@@ -269,6 +288,11 @@ footer li {
 	nav#main-nav > ul > li > a:hover,
 	nav#main-nav > ul > li > a:focus {
 		background: #111;
+	}
+
+	/*text style and size*/
+	section#container > article {
+		padding: 10px;
 	}
 
 	section#container > * > *,
@@ -368,7 +392,7 @@ footer li {
 	section#container > article {
 		display: inline-block;
 		width: calc(100% - 220px);
-		padding: 0 0 0 50px;
+		/*padding: 0 0 0 50px;*/
 		vertical-align: top;
 	}
 
@@ -463,12 +487,31 @@ footer li {
 	}
 
 	section#container {
-		font-size: 1em;
+		font-size: 0.9em;
+		font-weight: lighter;
+		text-align: center;
+		margin: auto;
 	}
 
 	/*text style and size*/
 	section#container > article {
 		width: calc(100% - 350px);
+	}
+
+	section > article.blog-resume.center-vertical {
+		max-width: 280px;
+		word-wrap: normal;
+		margin: 0 25px;
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 3px;
+	}
+
+	section > article.blog-resume h1 {
+		transition: 0.3s;
+	}
+
+	section > article.blog-resume:hover h1 {
+		color: #F80;
 	}
 
 	/*profile picture style*/
