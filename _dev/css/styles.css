@@ -207,6 +207,10 @@ section#container > article {
 	line-height: 1.5em;
 }
 
+article p {
+	text-align: left;
+}
+
 /*footer style and size*/
 footer {
 	position: fixed;
@@ -407,6 +411,11 @@ footer li {
 		border: 6px solid #EEE;
 	}
 
+	article p {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
 	footer > section {
 		display: inline-block;
 		padding: 0 25px;
@@ -601,7 +610,7 @@ footer li {
 		width: 350px;
 	}
 
-	input[type="submit"] {
+	input#newsltr-signup {
 		margin-left: -5px;
 	}
 
