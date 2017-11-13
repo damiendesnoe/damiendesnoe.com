@@ -203,11 +203,11 @@ nav#main-nav.active {
 }
 
 /*text style and size*/
-section#container > article {
+section#container article {
 	line-height: 1.5em;
 }
 
-section > article.blog-resume img {
+article.blog-resume img {
 	width: 100%;
 	height: 100%;
 }
@@ -300,22 +300,21 @@ footer li {
 	}
 
 	/*text style and size*/
-	section#container > article:not(.blog-resume) {
+	section#container * {
+		color: #222;
+	}
+
+	section#container article:not(.blog-resume) {
 		padding: 10px;
 	}
-	
-	section > article.blog-resume {
+
+	article.blog-resume {
 		margin-bottom: 30px;
 	}
 
-	section > article.blog-resume h1,
-	section > article.blog-resume p {
+	article.blog-resume h1,
+	article.blog-resume p {
 		margin: 0 10px;
-	}
-
-	section#container > * > *,
-	section#container > * > * > * {
-		color: #222;
 	}
 
 	/*profile picture style*/
@@ -402,16 +401,39 @@ footer li {
 	/*text style and size*/
 	section#container {
 		font-size: 0.8em;
+		text-align: center;
 		padding: 0 60px;
 		overflow-y: auto;
 	}
 
+	section#container p {
+		font-size: 0.9em;
+	}
+
 	/*text style and size*/
-	section#container > article {
+	section#container article {
 		display: inline-block;
 		width: calc(100% - 220px);
-		/*padding: 0 0 0 50px;*/
 		vertical-align: top;
+	}
+
+	article.blog-resume {
+		max-width: 184px;
+		margin: 0 12px;
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 3px;
+	}
+
+	article.blog-resume h1 {
+		transition: 0.3s;
+	}
+
+	article.blog-resume:hover h1 {
+		color: #F80;
+	}
+
+	article.blog-resume p {
+		padding: 5px 10px;
 	}
 
 	/*profile picture style*/
@@ -509,32 +531,28 @@ footer li {
 		padding: 20px 25px;
 	}
 
+	/*text style and size*/
 	section#container {
 		font-size: 0.9em;
 		font-weight: lighter;
-		text-align: center;
 		margin: auto;
 	}
 
-	/*text style and size*/
-	section#container > article {
+	section#container p {
+		font-size: 0.9em;
+	}
+
+	section#container article {
 		width: calc(100% - 350px);
 	}
 
-	section > article.blog-resume.center-vertical {
-		max-width: 280px;
-		word-wrap: normal;
-		margin: 0 25px;
-		background: rgba(255, 255, 255, 0.2);
-		border-radius: 3px;
+	article.blog-resume {
+		max-width: 240px;
+		margin: 0 20px;
 	}
 
-	section > article.blog-resume h1 {
-		transition: 0.3s;
-	}
-
-	section > article.blog-resume:hover h1 {
-		color: #F80;
+	article.blog-resume p {
+		padding: 10px;
 	}
 
 	/*profile picture style*/
@@ -594,6 +612,19 @@ footer li {
 	nav#main-nav > ul > li > a {
 		font-size: 1.3em;
 		padding: 23px 30px;
+	}
+
+	section#container {
+		font-size: 1em;
+	}
+
+	section#container p {
+		font-size: 0.9em;
+	}
+
+	article.blog-resume {
+		max-width: 280px;
+		margin: 0 25px;
 	}
 
 	footer {
