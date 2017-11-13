@@ -207,6 +207,11 @@ section#container > article {
 	line-height: 1.5em;
 }
 
+section > article.blog-resume img {
+	width: 100%;
+	height: 100%;
+}
+
 article p {
 	text-align: left;
 }
@@ -295,8 +300,17 @@ footer li {
 	}
 
 	/*text style and size*/
-	section#container > article {
+	section#container > article:not(.blog-resume) {
 		padding: 10px;
+	}
+	
+	section > article.blog-resume {
+		margin-bottom: 30px;
+	}
+
+	section > article.blog-resume h1,
+	section > article.blog-resume p {
+		margin: 0 10px;
 	}
 
 	section#container > * > *,
