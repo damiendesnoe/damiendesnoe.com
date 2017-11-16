@@ -51,18 +51,22 @@
       var footerHgt = parseCSS(window.getComputedStyle(footerEl).height);
       var containerHgt = parseCSS(window.getComputedStyle(containerEl).height);
 
-      var containerPad = (window.innerHeight - containerHgt - (headerHgt + footerHgt)) / 2;
+      var availableHgt = window.innerHeight - (headerHgt + footerHgt);
+      var containerPad = (availableHgt - containerHgt) / 2;
 
       // Ajout des Padding top et bottom pour centrer les éléments verticalement
       containerEl.style.padding = containerPad > 20 ? containerPad + "px" : containerPad + "px 20px";
       cntElList.forEach(function (el) {
         var contentHgt = parseCSS(window.getComputedStyle(el).height);
 
-        if (contentHgt < containerHgt) {
+        // Vérifie que les éléments à centrer ont une hauteur inférieur à celle du conteneur et de l'espace vertical disponible
+        if (contentHgt < containerHgt && containerHgt < availableHgt) {
           var contentPad = (containerHgt - contentHgt) / 2;
-          el.style.marginTop = contentPad + "px";
-          el.style.marginBottom = contentPad + "px";
-          console.log("container Height: " + containerHgt + "\ncontentHeight: " + contentHgt + "\ncontent Pad: " + contentPad);
+          el.style.paddingTop = contentPad + "px";
+          el.style.paddingBottom = contentPad + "px";
+        } else {
+          el.style.paddingTop = 0;
+          el.style.paddingBottom = 0;
         }
       });
 
